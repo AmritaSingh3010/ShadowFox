@@ -1,0 +1,136 @@
+/* ===== BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:system-ui, sans-serif;
+  background:#0a0114;
+  color:#eee;
+  line-height:1.6;
+}
+html{scroll-behavior:smooth;}
+.container{width:min(1100px,90%);margin:auto;}
+.section{padding:5rem 0;}
+.section-alt{background:#140024;}
+.section-title{text-align:center;font-size:2rem;margin-bottom:1.5rem;}
+.accent{color:#c084fc;}
+
+/* ===== NAVBAR ===== */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(20,0,40,0.8);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #5b21b6;
+}
+.nav-container{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
+.logo{font-size:1.4rem;font-weight:700;color:#fff;}
+.logo span{color:#c084fc;}
+.nav{display:flex;gap:1.6rem;}
+.nav-link{
+  color:#d8b4fe;text-decoration:none;position:relative;
+}
+.nav-link::after{
+  content:"";position:absolute;left:0;bottom:-4px;
+  width:0;height:2px;transition:.2s;background:#c084fc;
+}
+.nav-link:hover::after,.nav-link.active::after{width:100%;}
+.nav-toggle{display:none;background:none;border:none;color:white;font-size:1.5rem;}
+
+/* ===== HERO ===== */
+.hero{padding-top:6rem;}
+.hero-content{display:grid;grid-template-columns:2fr 1fr;gap:2rem;align-items:center;}
+.hero-tag{color:#d8b4fe;margin-bottom:.4rem;}
+.hero h1{font-size:2.8rem;color:white;}
+.hero-subtitle{color:#e9d5ff;font-size:1.2rem;margin-bottom:1rem;}
+.hero-text{color:#d1c4e9;margin-bottom:1.5rem;}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;}
+
+/* Buttons */
+.btn{padding:.7rem 1.2rem;border-radius:999px;cursor:pointer;text-decoration:none;font-size:.95rem;}
+.btn.primary{background:linear-gradient(135deg,#7c3aed,#4c1d95);color:white;}
+.btn.primary:hover{box-shadow:0 0 15px #a855f7;}
+.btn.secondary{background:#5b21b6;color:white;}
+.btn.secondary:hover{background:#6d28d9;box-shadow:0 0 15px #a855f7;}
+.btn.social.github{background:#4c1d95;color:white;}
+.btn.social.linkedin{background:#6d28d9;color:white;}
+.btn.social:hover{box-shadow:0 0 12px #c084fc;}
+.btn.full-width{width:100%;}
+
+/* Hero Card */
+.hero-card{
+  background:#1a0030;border:1px solid #5b21b6;
+  padding:2rem;border-radius:1.3rem;text-align:center;
+}
+.avatar-circle{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,#a855f7,#4c1d95);
+  display:grid;place-items:center;color:white;font-size:1.2rem;
+  margin:auto;margin-bottom:1rem;
+}
+
+/* ===== ABOUT ===== */
+.about-grid{margin-top:2rem;display:grid;gap:1.5rem;}
+.about-card{
+  background:#1a0030;padding:1.5rem;border-radius:1rem;
+  border:1px solid #5b21b6;color:#e9d5ff;
+}
+
+/* ===== SKILLS (NEW DESIGN) ===== */
+.skills-grid{
+  display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;margin-top:2rem;
+}
+.skill-box{
+  width:130px;height:130px;background:#22003b;border-radius:20px;
+  border:2px solid #6d28d9;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:1rem;text-align:center;color:white;font-weight:500;
+  transition:.3s;box-shadow:0 0 10px rgba(192,132,252,.15);
+}
+.skill-box img{
+  width:45px;height:45px;margin-bottom:.5rem;
+}
+.skill-box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 22px rgba(192,132,252,.45);
+  background:#3b0a63;
+}
+
+/* ===== PROJECTS ===== */
+.projects-grid{
+  margin-top:2rem;display:grid;gap:1.5rem;
+}
+.project-card{
+  background:#1a0030;padding:1.6rem;border-radius:1rem;
+  border:1px solid #5b21b6;color:#e9d5ff;
+}
+
+/* ===== CERTIFICATIONS ===== */
+.cert-grid{margin-top:2rem;display:grid;gap:1.5rem;}
+.cert-card{
+  background:#1a0030;padding:1.5rem;border-radius:1rem;
+  border:1px solid #5b21b6;color:#e9d5ff;text-align:center;
+}
+
+/* ===== CONTACT ===== */
+.contact-form{
+  max-width:450px;margin:0 auto 2rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.contact-form input,.contact-form textarea{
+  background:#1a0030;border:1px solid #6d28d9;color:white;
+  padding:.8rem;border-radius:.8rem;
+}
+.contact-info{text-align:center;color:#e5d5ff;}
+.contact-info a{color:#c084fc;text-decoration:none;}
+
+/* ===== FOOTER ===== */
+.footer{padding:1rem 0;text-align:center;background:#0b0014;color:#c084fc;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .hero-content{grid-template-columns:1fr;}
+  .nav{position:absolute;top:60px;left:0;width:100%;
+    background:#1a0030;flex-direction:column;padding:1rem;
+    opacity:0;pointer-events:none;transform:translateY(-200%);
+    transition:.3s}
+  .nav.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+  .nav-toggle{display:block;}
+}
